@@ -22,6 +22,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get("/", [\App\Http\Controllers\Front\HomeController::class, 'goHome'])->name('home');
     Route::get("/home", [\App\Http\Controllers\Front\HomeController::class, 'goHome'])->name('home');
     Route::get('/following/{followedUser_id}', [\App\Http\Controllers\Front\FollowingController::class, 'goFollowing'])->name('following');
+    Route::get('notification/read/all',[\App\Http\Controllers\Post\CreateController::class,'readAllNotifications'])->name('notification.readAll');
 
     Route::group(['prefix' => 'profile'], function () {
         Route::get('/', [\App\Http\Controllers\Front\ProfileController::class, 'goProfile'])->name('profile');
@@ -35,6 +36,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('like/add/ajax', [\App\Http\Controllers\Post\Like\CreateAjaxController::class, 'addLike'])->name('ajax.add like');
         Route::get('like/delete/{user_id}/{post_id}', [\App\Http\Controllers\Post\Like\DeleteController::class, 'deleteLike'])->name('post.like.delete');
         Route::get('share/add/{post_id}', [\App\Http\Controllers\Post\Share\CreateController::class, 'addShare'])->name('post.share.add');
+        Route::get('display/{post_id}',[\App\Http\Controllers\Post\CreateController::class,'display'])->name('post.display');
     });
 
     Route::group(['prefix' => 'comment'], function () {

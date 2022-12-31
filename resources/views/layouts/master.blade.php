@@ -57,6 +57,18 @@
     ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
 </script>
 <script src="{{asset('https://code.jquery.com/jquery-3.6.0.slim.min.js')}}" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+<script>
+    const button = document.querySelector('#notification-button');
+    const list = document.querySelector('#notification-list');
+
+    button.addEventListener('click', function() {
+        if (list.style.display === 'none') {
+            list.style.display = 'block';
+        } else {
+            list.style.display = 'none';
+        }
+    });
+</script>
 @yield('scripts')
 </body>
 </html>

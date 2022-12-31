@@ -578,8 +578,15 @@ nav {
     border-radius: 25px !important;
     border: 1px solid #c6c8ca !important;
 }
-
-
+.number-notification{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: red;
+    position: absolute;
+    left: 80%;
+    top: 10%;
+}
 /*------------------------------------------------------------------
 [ Responsive ]*/
 
@@ -683,4 +690,45 @@ nav {
         visibility: visible;
         opacity: 1;
     }
+}
+
+.notification-list{
+    position: absolute;
+    left: 20px;
+    top: 100%;
+    background-color: #fce3f8;
+    min-width: 300px;
+    display: none;
+    color: white;
+    z-index: 999;
+}
+
+.notification {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.text {
+    flex: 1;
+}
+
+.name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.time {
+    font-size: 12px;
+    color: #999;
+    margin-left: 10px;
+    margin-top: 5px;
 }

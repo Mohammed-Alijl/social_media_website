@@ -22,6 +22,30 @@
                             <input type="search" class="p-1 fs-14 pl-3 input-border"  placeholder="Search .. !">
                         </form>
                     </li>
+
+                    <li class="nav-item pt-2 pl-3" style="position: relative">
+                        <button id="notification-button"><i class="fa fa-bell-o" aria-hidden="true" style="position: relative;font-size: 20px"></i></button>
+                        <ul id="notification-list" class="notification-list">
+                            @foreach(auth()->user()->unreadNotifications as $notification)
+                                <a href="{{route('post.display',$notification->data['post_id'])}}">
+                            <li>
+                                <div class="notification">
+                                    <img src="{{asset('img/users/profile_picture/' . $notification->data['user_image'])}}" alt="Profile image" class="profile-image">
+                                    <div class="text">
+                                        <p class="name">{{$notification->data['user_name']}}</p>
+                                        <p class="message">{{$notification->data['message']}}</p>
+                                    </div>
+                                    <time class="time">{{$notification->created_at->diffForHumans()}}</time>
+                                </div>
+                            </li>
+                                </a>
+                            @endforeach
+                            <li><a style="padding-left: 40%" href="{{route('notification.readAll')}}">View All</a></li>
+                        </ul>
+                        <div class="number-notification">
+                            <p style="color: white;text-align: center">{{auth()->user()->unreadNotifications->count()}}</p>
+                        </div>
+                    </li>
                 </ul>
                 <div class="form-inline my-2 my-lg-0">
                     <ul class="navbar-nav mr-auto">
