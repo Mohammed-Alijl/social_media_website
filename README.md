@@ -201,10 +201,8 @@ Make sure the following are installed on your machine:
 
 **1. Clone the repository**
 
-> 📝 If the repository has been renamed to `connecthub`, replace the URL below accordingly.
-
 ```bash
-git clone https://github.com/Mohammed-Alijl/social_media_website.git connecthub
+git clone https://github.com/Mohammed-Alijl/ConnectHub.git
 cd connecthub
 ```
 
